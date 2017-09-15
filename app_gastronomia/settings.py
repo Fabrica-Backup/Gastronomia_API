@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'rest_framework',
 
 # Local Apps
+    'ingredientes',
     'unidades_medida',
+
 ]
 
 MIDDLEWARE = [
