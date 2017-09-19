@@ -25,7 +25,7 @@ class ListUnidadeMedida(APIView):
         return Response(serializer.data)
 
 
-class DetailsUnidadeMedida(APIView):
+class EditUnidadeMedida(APIView):
     serializer_class = UnidadeMedidaSerializer
 
     def get(self, request, id, format=None):
@@ -38,6 +38,13 @@ class DetailsUnidadeMedida(APIView):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class DeleteUnidadeMedida(APIView):
+    serializer_class = UnidadeMedidaSerializer
+
+    def get(self, request, id, format=None):
+        serializer = self.serializer_class(UnidadeMedida.objects.get(id_unidade_medida=id))
+        return Response(serializer.data)
 
     def delete(self, request, id, format=None):
         UnidadeMedida.objects.get(id_unidade_medida=id).delete()

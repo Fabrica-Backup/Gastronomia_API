@@ -30,7 +30,7 @@ class ListIngrediente(APIView):
         serializer = self.serializer_class(Ingrediente.objects.all(), many=True)
         return Response(serializer.data)
 
-class DetailsIngrediente(APIView):
+class EditIngrediente(APIView):
     serializer_class = DetailsIngredienteSerializer
 
     def get(self, request, id, format=None):
@@ -43,6 +43,13 @@ class DetailsIngrediente(APIView):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class DeleteIngrediente(APIView):
+    serializer_class = DetailsIngredienteSerializer
+
+    def get(self, request, id, format=None):
+        serializer = self.serializer_class(Ingrediente.objects.get(id_ingrediente=id))
+        return Response(serializer.data)
 
     def delete(self, request, id, format=None):
         Ingrediente.objects.get(id_ingrediente=id).delete()

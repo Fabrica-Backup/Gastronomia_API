@@ -9,7 +9,7 @@ class UnidadeMedidaSerializer(serializers.ModelSerializer):
             'simbolo_unidade_medida',
             'descricao_unidade_medida'
         ]
-        
+
     def validate(self, data):
         simbolo = data['simbolo_unidade_medida']
         descricao = data['descricao_unidade_medida']
