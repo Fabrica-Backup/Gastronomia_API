@@ -37,12 +37,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+#Apps de terceiros
     'rest_framework',
 
 # Local Apps
+    'app_main',
+    'aulas',
+    'aulas_ingredientes',
+    'aulas_receitas',
+    'categorias',
+    'classificacoes',
+    'conversoes',
     'ingredientes',
-    'unidades_medida',
-
+    'receitas',
+    'receitas_ingredientes',
+    'unidades_medida'
 ]
 
 MIDDLEWARE = [
