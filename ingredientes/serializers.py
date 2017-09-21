@@ -6,7 +6,7 @@ from .models import Ingrediente
 from unidades_medida.serializers import UnidadeMedidaSerializer
 
 class CreateIngredienteSerializer(serializers.ModelSerializer):
-    unidades_medida = UnidadeMedidaSerializer
+    id_unidades_medida = UnidadeMedidaSerializer
     class Meta:
         model = Ingrediente
         fields = [
@@ -14,7 +14,7 @@ class CreateIngredienteSerializer(serializers.ModelSerializer):
             'nome_ingrediente',
             'quantidade_caloria_ingrediente',
             'aproveitamento_ingrediente',
-            'unidades_medida'
+            'id_unidades_medida'
         ]
 
     def validate(self, data):
@@ -32,7 +32,7 @@ class CreateIngredienteSerializer(serializers.ModelSerializer):
         return data
 
 class ListIngredienteSerializer(serializers.ModelSerializer):
-    unidades_medida = UnidadeMedidaSerializer
+    id_unidades_medida = UnidadeMedidaSerializer
     class Meta:
         model = Ingrediente
         fields = [
@@ -43,11 +43,11 @@ class ListIngredienteSerializer(serializers.ModelSerializer):
             'quantidade_estoque_ingrediente',
             'quantidade_reservada_ingrediente',
             'motivo_retirada_estoque',
-            'unidades_medida'
+            'id_unidades_medida'
         ]
 
 class DetailsIngredienteSerializer(serializers.ModelSerializer):
-    unidades_medida = UnidadeMedidaSerializer
+    id_unidades_medida = UnidadeMedidaSerializer
     class Meta:
         model = Ingrediente
         fields = [
@@ -58,7 +58,7 @@ class DetailsIngredienteSerializer(serializers.ModelSerializer):
             'quantidade_estoque_ingrediente',
             'quantidade_reservada_ingrediente',
             'motivo_retirada_estoque',
-            'unidades_medida'
+            'id_unidades_medida'
         ]
 
     def validate(self, data):
