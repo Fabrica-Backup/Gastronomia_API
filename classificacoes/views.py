@@ -18,7 +18,7 @@ class CreateClassificacao(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class ListClassificacao(APIView):
-    serializer_class = UnidadeMedidaSerializer
+    serializer_class = ClassificacaoSerializer
 
     def get(self, request, format=None):
         serializer = self.serializer_class(Classificacao.objects.all(), many=True)
@@ -26,7 +26,7 @@ class ListClassificacao(APIView):
 
 
 class EditClassificacao(APIView):
-    serializer_class = UnidadeMedidaSerializer
+    serializer_class = ClassificacaoSerializer
 
     def get(self, request, id, format=None):
         serializer = self.serializer_class(Classificacao.objects.get(id_classificacao=id))
