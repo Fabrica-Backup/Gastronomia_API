@@ -6,10 +6,10 @@ class ClassificacaoSerializer(serializers.ModelSerializer):
         model = Classificacao
         fields = [
             'id_classificacao',
-            'descricacao_classificacao',
+            'descricao_classificacao',
         ]
 
     def validate(self, data):
-        descricacao_classificacao = data['descricacao_classificacao']
+        descricacao_classificacao = data['descricao_classificacao']
         descricacao_classificacao.lower()
         return data
